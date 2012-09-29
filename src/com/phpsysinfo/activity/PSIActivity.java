@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -106,7 +107,10 @@ implements OnClickListener, View.OnTouchListener
 		/***************************************************************/
 
 
-		//get preference
+		//get preference config
+		getPreferences();
+
+		//get preference host
 		currentHost = pref.getString(PSIConfig.JSON_CURRENT_HOST, "");
 
 		//load data
@@ -322,7 +326,7 @@ implements OnClickListener, View.OnTouchListener
 
 		//ipmi section
 		showIpmi(entry);
-		
+
 		//network section
 		showNetworkInterface(entry);
 	}
@@ -410,6 +414,10 @@ implements OnClickListener, View.OnTouchListener
 		case R.id.iSettings:
 			Intent i = new Intent(this, PSIUrlActivity.class);
 			startActivityForResult(i,0);
+			return true;
+		case R.id.iPreferences:
+			Intent iPreferences = new Intent(this, PSIPreferences.class);
+			startActivity(iPreferences);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -509,6 +517,9 @@ implements OnClickListener, View.OnTouchListener
 	 * @param currentHost
 	 */
 	public void getData(String currentHost) {
+
+		getPreferences();
+
 		PSIDownloadData task = new PSIDownloadData(this);
 
 		try {
@@ -662,6 +673,16 @@ implements OnClickListener, View.OnTouchListener
 			llTemperature.addView(tTemperature);
 			llPlugins.addView(llTemperature);
 		}
+	}
+
+
+	public void getPreferences() {
+
+		PSIConfig.MEMORY_SOFT_THR = Integer.parseInt( 
+				pref.getString(PSIConfig.MEMORY_SOFT_THR_KEY, PSIConfig.MEMORY_SOFT_THR+"") );
+		PSIConfig.MEMORY_HARD_THR = Integer.parseInt( 
+				pref.getString(PSIConfig.MEMORY_HARD_THR_KEY, PSIConfig.MEMORY_SOFT_THR+"") );
+
 	}
 
 }

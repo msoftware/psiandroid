@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PSIAndroid</string>
+    
     <string name="lblUptime">Uptime:</string>
     <string name="lblMemory">Memory</string>
     <string name="lblLoad">Load:</string>
@@ -8,21 +9,28 @@
     <string name="lblKernel">Kernel:</string>
     <string name="lblDistro">Distro:</string>
     <string name="lblIp">IP:</string>
-    <string name="lblRefresh">Refresh</string>
-    <string name="lblSettings">Settings</string>
-    <string name="lblNodata"></string>
-    <string name="lblMio">MiB</string>
-    <string name="lblGio">GiB</string>
-    <string name="lblTio">TiB</string>
-    <string name="lblAdd">Add</string>
-    <string name="lblAbout">About</string>
-    <string name="lblUrlHint">http://</string>
-    <string name="lblHosts">Hosts</string>
-    <string name="lblUser">username</string>
-    <string name="lblPassword">password</string>
     <string name="lblMemoryUsage">Memory Usage</string>
     <string name="lblMountPoints">Mounted File Systems</string>
     <string name="lblCpu">Processor:</string>
     <string name="lblTemperatures">Temperatures</string>
     <string name="lblNetwork">Networks</string>
+    
+    <string name="lblRefresh">Refresh</string>
+    <string name="lblSettings">Settings</string>
+    <string name="lblPreferences">Preferences</string>
+    <string name="lblAbout">About</string>
+    
+    <string name="lblMio">MiB</string>
+    <string name="lblGio">GiB</string>
+    <string name="lblTio">TiB</string>
+    
+    <string name="lblUrlHint">http://</string>
+    <string name="lblHosts">Hosts</string>
+    <string name="lblUser">username</string>
+    <string name="lblPassword">password</string>
+    <string name="lblAdd">Add</string>
+
+    <string name="lblMemorySoft">Soft threshold (%)</string>
+	<string name="lblMemoryHard">Hard threshold (%)</string>
+    
 </resources>

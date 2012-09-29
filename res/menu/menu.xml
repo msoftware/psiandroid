@@ -16,6 +16,13 @@
         android:showAsAction="ifRoom">
     </item>
     <item
+        android:id="@+id/iPreferences"
+        android:alphabeticShortcut="p"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/lblPreferences"
+        android:showAsAction="ifRoom">
+    </item>    
+    <item
         android:id="@+id/iAbout"
         android:alphabeticShortcut="a"
         android:icon="@drawable/ic_menu_info_details"
